@@ -1,0 +1,170 @@
+.menu {
+  display: none;
+  width: 0;
+}
+@media only screen and (max-width: 62.5em) {
+  .menu {
+    display: inline;
+    width: 100%;
+  }
+}
+.menu__checkbox {
+  display: none;
+}
+.menu__button {
+  height: 5rem;
+  width: 5rem;
+  border-radius: 50%;
+  z-index: 2000;
+  cursor: pointer;
+}
+.menu__background {
+  height: 100%;
+  width: 0;
+  position: fixed;
+  top: 1.5%;
+  right: -75%;
+  background-color: white;
+  z-index: 1000;
+  transform: translateX(90rem);
+  transition: transform 0.8s cubic-bezier(0.83, 0, 0.17, 1), width 0.5s;
+}
+@media only screen and (max-width: 62.5em) {
+  .menu__background {
+    top: 0;
+    right: 0;
+  }
+}
+.menu__list {
+  position: absolute;
+  top: 50%;
+  right: -36%;
+  transform: translate(-50%, -50%);
+  width: 100%;
+  padding: 2rem;
+  list-style: none;
+  color: black;
+  font-size: 2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+@media only screen and (max-width: 62.5em) {
+  .menu__list {
+    right: -55%;
+    font-size: 1rem;
+  }
+}
+.menu__list__item {
+  margin: 1rem;
+  cursor: pointer;
+  z-index: 1200;
+}
+.menu__list__item:hover {
+  animation: shake 0.4s;
+}
+@keyframes shake {
+  0% {
+    transform: translateX(0);
+  }
+  25% {
+    transform: translateX(2rem);
+  }
+  50% {
+    transform: translateX(-2rem);
+  }
+  75% {
+    transform: translateX(2rem);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+.menu__checkbox:checked ~ .menu__background {
+  width: 120%;
+  transform: translateX(1.6rem);
+}
+.menu__checkbox:checked ~ .menu__nav {
+  opacity: 1;
+  width: 100%;
+}
+.menu__icon {
+  position: relative;
+  color: black;
+  border-radius: 6px;
+  z-index: 2001;
+}
+.menu__icon:active {
+  position: fixed;
+}
+.menu__icon, .menu__icon::before, .menu__icon::after {
+  width: 3rem;
+  height: 4px;
+  background-color: black;
+  border-radius: 6px;
+  display: inline-block;
+}
+.menu__icon::before, .menu__icon::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  transition: all 0.2s;
+}
+.menu__icon::before {
+  top: -0.83rem;
+}
+.menu__icon::after {
+  top: 0.95rem;
+}
+.menu__button:hover .menu__icon::before {
+  top: -1rem;
+}
+.menu__button:hover .menu__icon::after {
+  top: 1rem;
+}
+.menu__checkbox:checked + .menu__button .menu__icon {
+  position: fixed;
+  background-color: transparent;
+}
+@media only screen and (max-width: 55em) {
+  .menu__checkbox:checked + .menu__button .menu__icon {
+    position: fixed;
+  }
+}
+.menu__checkbox:checked + .menu__button .menu__icon::before {
+  top: 0;
+  transform: rotate(135deg);
+}
+.menu__checkbox:checked + .menu__button .menu__icon::after {
+  top: 0;
+  transform: rotate(-135deg);
+}
+
+@media only screen and (max-width: 55em) {
+  .lazy-img--1 {
+    order: -1;
+  }
+  .lazy-img--2 {
+    order: 1;
+  }
+  .lazy-img--3 {
+    order: 3;
+  }
+  .f--1 {
+    order: 0;
+  }
+  .f--2 {
+    order: 2;
+  }
+  .f--3 {
+    order: 4;
+  }
+}
+@media only screen and (max-width: 450px) {
+  .contact {
+    position: absolute;
+    left: 50%;
+    top: 130%;
+    transform: translate(-50%, -50%);
+  }
+}/*# sourceMappingURL=main.css.map */

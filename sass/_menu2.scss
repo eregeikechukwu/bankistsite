@@ -1,0 +1,38 @@
+@media only screen and (max-width: $bp-medium) {
+  .lazy-img {
+    &--1 {
+      order: -1;
+    }
+
+    &--2 {
+      order: 1;
+    }
+
+    &--3 {
+      order: 3;
+    }
+  }
+
+  .f {
+    &--1 {
+      order: 0;
+    }
+
+    &--2 {
+      order: 2;
+    }
+
+    &--3 {
+      order: 4;
+    }
+  }
+}
+
+@media only screen and (max-width: 450px) {
+  .contact {
+    position: absolute;
+    left: 50%;
+    top: 130%;
+    transform: translate(-50%, -50%);
+  }
+}
