@@ -49,6 +49,11 @@ body {
   transition: transform 1s, opacity 1s;
 }
 
+/* .section--3 {
+  padding: 5rem 3rem;
+  height: 90vh;
+} */
+
 .section--hidden {
   opacity: 0;
   transform: translateY(8rem);
@@ -161,7 +166,7 @@ img {
   list-style: none;
 }
 
-@media (max-width: 450px) {
+@media (max-width: 750px) {
   .nav__links {
     display: none;
   }
@@ -219,7 +224,7 @@ img {
   justify-items: start;
 }
 
-@media (max-width: 600px) {
+@media (max-width: 750px) {
   .header__title {
     display: flex;
     flex-direction: column;
@@ -283,7 +288,7 @@ h4 {
   margin: 0 12rem;
 }
 
-@media (max-width: 600px) {
+@media (max-width: 750px) {
   .features {
     display: flex;
     flex-direction: column;
@@ -453,9 +458,16 @@ h4 {
   display: flex;
   align-items: center;
   justify-content: center;
+  z-index: 20;
 
   /* THIS creates the animation! */
   transition: transform 1s;
+}
+
+@media (max-width:600px) {
+  .slide {
+    transform: translateY(100%);
+  }
 }
 
 .slide>img {
@@ -495,8 +507,15 @@ h4 {
   position: absolute;
   bottom: 5%;
   left: 50%;
-  transform: translateX(-50%);
+  transform: translateX(-90%);
   display: flex;
+}
+
+@media(max-width: 600px) {
+  .dots {
+    /* transform: translateY(400%); */
+    z-index: 10;
+  }
 }
 
 .dots__dot {
@@ -613,7 +632,7 @@ h4 {
   background-color: #37383d;
 }
 
-@media(max-width: 450px) {
+@media(max-width: 750px) {
   .footer {
     text-align: center;
   }
@@ -626,7 +645,7 @@ h4 {
   margin-bottom: 5rem;
 }
 
-@media(max-width: 500px) {
+@media(max-width: 750px) {
   .footer__nav {
     position: relative;
     justify-content: center;
@@ -640,7 +659,7 @@ h4 {
   /* margin-right: 4rem; */
 }
 
-@media(max-width: 450px) {
+@media(max-width: 600px) {
   .footer__item {
     margin-right: 0;
   }
@@ -749,6 +768,7 @@ h4 {
   display: flex;
   align-items: center;
   justify-content: space-evenly;
+  /* opacity: 0; */
   width: 100%;
   background-color: white;
   color: #bbb;
@@ -756,9 +776,25 @@ h4 {
   font-weight: 400;
   z-index: 34;
   position: fixed;
-  bottom: 15px;
+  bottom: 5px;
   left: 0;
   right: 0;
+  transition: all .5s;
+}
+
+@media(max-width: 600px) {
+  .cookie-message {
+    display: inline;
+    text-align: justify;
+    text-wrap: wrap;
+    height: auto;
+    font-size: 1.4rem;
+    padding-left: 1rem;
+  }
+}
+
+.btn--close-cookie {
+  scale: .7;
 }
 
 

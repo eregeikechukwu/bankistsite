@@ -65,9 +65,17 @@
       margin: 1rem;
       cursor: pointer;
       z-index: 1200;
+      transform: translateX(-100px);
+      opacity: 0;
+      transition: transform 0.5s ease-out, opacity 0.9s ease-out;
 
       &:hover {
         animation: shake 0.4s;
+      }
+
+      &.visible {
+        transform: translateX(0);
+        opacity: 1;
       }
     }
 
@@ -105,8 +113,6 @@
     opacity: 1;
     width: 100%;
   }
-
- 
 
   //ICON
   &__icon {

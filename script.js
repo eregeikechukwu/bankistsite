@@ -11,6 +11,10 @@ const tabs = document.querySelectorAll('.operations__tab');
 const tabsContainer = document.querySelector('.operations__tab-container');
 const tabsContent = document.querySelectorAll('.operations__content');
 
+const navContent = document.querySelectorAll('.menu__list__item');
+
+const btnapp = document.querySelector('.btn--app');
+
 ///////////////////////////////////////
 // Modal window
 
@@ -290,6 +294,50 @@ const slider = function () {
 };
 slider();
 
+/////////////////////////////////////////////
+//OPTIMIZATION CODE
+//////////////////////////////////////
+//switch to app
+btnapp.addEventListener('click', event => {
+  event.preventDefault();
+  window.location.href = './index2.html';
+});
+
+//Nav Links
+const mCheckbox = document.querySelector('.menu__checkbox');
+
+document.addEventListener('DOMContentLoaded', function () {
+  const mediaQ = window.matchMedia('(max-width: 500px)');
+
+  navContent.forEach(el =>
+    el.addEventListener('click', function () {
+      if (mediaQ.matches) {
+        mCheckbox.checked = false;
+      }
+    })
+  );
+});
+
+////////////////////////////////////////
+//Nav Animation
+const navAnime = function () {
+  navContent.forEach((element, index) => {
+    element.classList.remove('visible');
+
+    setTimeout(() => {
+      console.log(index + 'yeah');
+      element.classList.add('visible');
+    }, (index + 1) * 200);
+  });
+};
+
+mCheckbox.addEventListener('change', event => {
+  if (event.target.checked) {
+    navAnime();
+    console.log('i am clicked');
+  }
+});
+
 ///////////////////////////////////////
 ///////////////////////////////////////
 ///////////////////////////////////////
@@ -524,14 +572,6 @@ message.innerHTML =
 
 //Deletes elements
 
-document
-  .querySelector('.btn--close-cookie')
-  .addEventListener('click', function () {
-    // message.remove();
-
-    message.parentElement.removeChild(message); //This method of goimg through the parent and then the child is called trasversing
-  }); //We used the .dot remove method to remove elements in the dom, by the way, this is the newer way of doing this, tthe oldr way is illustrated below the remove method
-
 /////////////////////////////////////////////////////
 //Styles
 message.style.backgroundColor = '#37383d';
@@ -544,14 +584,28 @@ console.log(getComputedStyle(message).color); //THis is the only way to acces th
 console.log(getComputedStyle(message).height);
 
 message.style.height =
-  Number.parseFloat(getComputedStyle(message).height, 10) + 30 + 'px'; //THe logic here is quite intuitive
+  Number.parseFloat(getComputedStyle(message).height, 10) + 80 + 'px'; //THe logic here is quite intuitive
 
 setTimeout(
   () => {
-    message.classList.add('cookie-message');
-    message.style.opacity = 1;
     header.append(message);
+    console.log(header);
+    console.log(message);
+    message.classList.add('cookie-message');
+    // message.style.opacity = 1;
+    cancel();
+    console.log('ooooooo');
   },
 
   6000
 );
+
+const cancel = function () {
+  document
+    .querySelector('.btn--close-cookie')
+    .addEventListener('click', function () {
+      // message.remove();
+
+      message.parentElement.removeChild(message); //This method of goimg through the parent and then the child is called trasversing
+    }); //We used the .dot remove method to remove elements in the dom, by the way, this is the newer way of doing this, tthe oldr way is illustrated below the remove method
+};

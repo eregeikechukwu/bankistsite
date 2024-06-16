@@ -36,3 +36,14 @@
     transform: translate(-50%, -50%);
   }
 }
+
+.modal__form {
+  input {
+    outline: none;
+    transition: all 0.5s;
+
+    &:focus {
+      box-shadow: 0 0 8px rgb(71, 68, 68, 0.6);
+    }
+  }
+}

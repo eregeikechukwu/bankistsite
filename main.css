@@ -59,9 +59,16 @@
   margin: 1rem;
   cursor: pointer;
   z-index: 1200;
+  transform: translateX(-100px);
+  opacity: 0;
+  transition: transform 0.5s ease-out, opacity 0.9s ease-out;
 }
 .menu__list__item:hover {
   animation: shake 0.4s;
+}
+.menu__list__item.visible {
+  transform: translateX(0);
+  opacity: 1;
 }
 @keyframes shake {
   0% {
@@ -167,4 +174,11 @@
     top: 130%;
     transform: translate(-50%, -50%);
   }
+}
+.modal__form input {
+  outline: none;
+  transition: all 0.5s;
+}
+.modal__form input:focus {
+  box-shadow: 0 0 8px rgba(71, 68, 68, 0.6);
 }/*# sourceMappingURL=main.css.map */
