@@ -379,7 +379,7 @@ btnSort.addEventListener('click', function (e) {
   sorted = !sorted;
 });
 
-prompt('hjgjhbjbjbnj');
+// prompt('hjgjhbjbjbnj');
 
 ///////////////////////////////////////////////
 //Create Account
