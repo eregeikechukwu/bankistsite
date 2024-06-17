@@ -300,7 +300,8 @@ slider();
 //switch to app
 btnapp.addEventListener('click', event => {
   event.preventDefault();
-  window.location.href = './index2.html';
+  console.log('Holla');
+  window.location.href = 'final/index2.html';
 });
 
 //Nav Links
