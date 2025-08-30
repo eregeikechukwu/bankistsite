@@ -1,4 +1,4 @@
-### Bankist
+good### Bankist
 
 
 
@@ -8,5 +8,5 @@ It uses JavaScript to handle diverse operations in it.
 ✅ Simulated a non database Authentication process 
 
 
-..
+..  .,
 login with username: js  password: 1111.
